@@ -1,2 +1,3 @@
-# python_study
-Sylvie233的Python学习之路
+# Python_Study
+
+Sylvie233的Python学习之路~~~
