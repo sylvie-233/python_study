@@ -4,7 +4,7 @@
 >
 > Date: 23/1/22
 >
-> Point: P26
+> Point: 
 
 [TOC]
 
@@ -38,6 +38,23 @@ django项目：
 
 
 
+nginx的uwsgi代理
+
+```
+location /xxx {
+	uwsgi_pass x.x.x.x:x;
+	include uwsgi_params;
+}
+```
+
+
+
+
+
+
+
+
+
 ### django-admin
 
 ```
@@ -53,10 +70,63 @@ django-admin:
 
 ```
 manage.py:
+	collectstatic: 收集静态文件
+	createsuperuser:
 	makemigrations:
 	migrate:	
 	runserver:
 	startapp:
+	
+```
+
+
+
+### uwsgi
+
+```
+uwsgi:
+	--ini: 指定配置文件
+	--reload:
+	--stop:
+```
+
+
+
+#### uwsgi.ini
+
+```ini
+[uwsgi]
+master = true
+processes = 1
+threads = 2
+
+
+# 指定项目目录
+chdir = /www/wwwroot/xxx
+wsgi-file = %(chdir)/xxx/wsgi.py
+socket = x.x.x.x:x
+
+
+logto = /xxx
+chmod-socket = 660
+vacuum = true
+max-request = 1000
+
+# uwsgi的运行状态
+stats = %(chdir)/uwsti.status
+pidfile = %(chdir)/uwsgi.pid
+```
+
+
+
+
+
+
+
+### gunicorn
+
+```
+gunicorn:
 	
 ```
 
@@ -77,6 +147,21 @@ manage.py:
 settings.py
 
 ```
+# 主机
+ALLOWED_HOSTS = []
+
+# 项目根目录
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# 缓存
+CACHES = {
+	"default": {
+		"BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+		"LOCATION":
+	}
+}
+
 # 数据库
 DATABASES = {
 	"default": {
@@ -89,6 +174,9 @@ DATABASES = {
 	}
 }
 
+# 调试模式
+DEBUG = True
+
 # 已安装的app应用
 INSTALLED_APPS = [
 	"django.contrib.admin",
@@ -99,6 +187,10 @@ INSTALLED_APPS = [
 	"django.contrib.staticfiles",
 	“自定义应用AppConfig”
 ]
+
+# medi
+MEDIA_ROOT = /xxx
+MEDIA_URL = "/xx"
 
 # 中间件
 MIDDLEWARE = [
@@ -114,8 +206,13 @@ MIDDLEWARE = [
 # url映射
 ROOT_URLCONF = "xxx.urls"
 
+# 密钥
+SECRET_KEY = "xxx"
+
 # 静态目录
+STATIC_ROOT = os.path.join()
 STATIC_URL = "/static/"
+STATICFILES_DIRS = []
 
 # 模板配置
 TEMPLATES = [
@@ -134,7 +231,7 @@ TEMPLATES = [
 	}
 ]
 
-# WSGI
+# WSGI入口
 WSGI_APPLICATION = "xxx.wsgi.applicaion"
 ```
 
@@ -189,6 +286,7 @@ wsgi.py
 {{ xxx }}
 {{ xxx.0 }}
 {{ xxx.xxx }}
+{{ request }}
 
 # for循环
 {% for it in items %}
@@ -207,7 +305,9 @@ wsgi.py
 # 模板函数
 date
 
-
+# 继承
+{% block xxx %} {% endblock %}
+{% extends "xxx.html" %}
 
 ```
 
@@ -246,6 +346,10 @@ Xxx:
 		all():
 		create():
 		filter():
+			xxx__contains:
+			xxx__gt:
+			xxx__gte:
+			xxx__startswith:
 			QuerySet:
                 delete():
                 first():
@@ -258,6 +362,11 @@ Xxx:
 
 
 
+### ModelForm
+
+input集合
+
+字段校验
 
 
 
@@ -265,10 +374,9 @@ Xxx:
 
 
 
+### 中间件
 
-
-
-
+装饰器实现
 
 
 
@@ -296,11 +404,17 @@ Xxx:
 
 ```
 request:
+	FILES:
+		name:
+		chunks():
 	GET:
+		urlencode():
 	POST:
 	method:
-	
-
+	path_info:
+	session:
+		clear():
+		set_expiry():
 ```
 
 ### apps
@@ -309,13 +423,37 @@ request:
 
 
 
+### conf
 
+#### settings
 
 
 
 ### contrib
 
 #### admin
+
+
+
+### core
+
+#### exceptions
+
+```
+django.core.exceptions:
+	ValidationError:
+```
+
+
+
+#### validators
+
+```
+django.core.validators:
+	RegexValidator:
+```
+
+
 
 
 
@@ -339,6 +477,8 @@ django.db.models:
 	CharField:
 	DateTimeField:
 	DecimalField:
+	FileField:
+		upload_to:
 	ForeignKey:
 		to:
 		to_field:
@@ -351,11 +491,83 @@ django.db.models:
 		objects:
             all():
             create():
+            exclude():
             filter():
                 QuerySet:
                     delete():
+                    exists():
                     first():
+                    get_xxx_display():
+                    order_by():
                     update():
+                    values():
+                    valuee_list():
+```
+
+
+
+### forms
+
+```
+django.forms:
+	CharField:
+		label:
+		validators:
+		widget:
+	FileField:
+	Form:
+		cleaned_data:
+		data:
+		files:
+		xxx:
+		add_error():
+		clean_xxx():
+		is_valid():
+	IntegerField:
+	ModelForm:
+		Meta:
+			fields:
+			model:
+			widgets: {
+				xxx": forms.TextInput()
+			}
+		cleaned_data:
+		data:
+		errors:
+			as_json():
+		xxx:
+			label:
+			errors:
+		instance:
+		clean_xxx(): 字段钩子函数
+		is_valid():
+		save():
+		
+	PasswordInput:
+	TextInput:
+		attrs:
+```
+
+
+
+#### utils
+
+```
+django.forms.utils:
+	ErrorDict:
+```
+
+
+
+
+
+
+
+### http
+
+```
+django.http:
+	JsonResponse:
 ```
 
 
@@ -378,9 +590,49 @@ django.db.models:
 
 #### path
 
+#### re_path
 
 
 
+
+
+
+
+
+
+### utils
+
+#### deprecation
+
+```
+django.utils.deprecation:
+	MiddlewareMixin:
+		process_request():
+		process_response():
+```
+
+
+
+#### safestring
+
+```
+django.utils.safestring:
+	mark_safe():
+```
+
+
+
+
+
+### views
+
+#### decorators
+
+```
+django.views.decorators:
+	csrf:
+		csrf_exempt():
+```
 
 
 

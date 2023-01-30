@@ -12,7 +12,17 @@
 
 ```
 python:
-	
+	--version:
+```
+
+
+
+### pip
+
+```
+pip:
+	config:
+		
 ```
 
 
@@ -256,7 +266,8 @@ builtins:
 ### datetime
 
 ```
-
+datetime:
+	now():
 ```
 
 
@@ -288,7 +299,10 @@ builtins:
 ### io
 
 ```
-
+io:
+	BytesIO:
+        ---
+        getvalue():
 ```
 
 
@@ -333,7 +347,7 @@ builtins:
 
 ```
 os:
-	
+	mkdir():
 ```
 
 
@@ -342,7 +356,9 @@ os:
 
 ```
 os.path:
-	
+	dirname():
+	exists():
+	join():
 ```
 
 
@@ -370,7 +386,8 @@ os.path:
 ### random
 
 ```
-
+random:
+	randint():
 ```
 
 
@@ -449,7 +466,8 @@ sys:
 ### time
 
 ```
-
+time:
+	strftime():
 ```
 
 
