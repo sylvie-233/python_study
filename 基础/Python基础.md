@@ -12,6 +12,7 @@
 
 ```
 python:
+	-m: 执行模块内命令
 	--version:
 ```
 
@@ -22,7 +23,21 @@ python:
 ```
 pip:
 	config:
-		
+	freeze:
+	install:
+		-i:
+		-r:
+		--upgrade:
+	list:	
+```
+
+
+
+### virtualenv
+
+```
+virtualenv:
+	--help:
 ```
 
 
@@ -125,6 +140,19 @@ jupyter:
 
 ## 核心内容
 
+预定义变量
+
+```
+预定义变量：
+	__name__:
+```
+
+
+
+
+
+
+
 ### 字符串
 
 ### 类和对象
@@ -183,7 +211,9 @@ jupyter:
 ### array
 
 ```
-
+array:
+	append():
+	remove():
 ```
 
 
@@ -199,7 +229,9 @@ jupyter:
 ### base64
 
 ```
-
+base64:
+	b64encode():
+		decode():
 ```
 
 
@@ -255,6 +287,34 @@ builtins:
 
 
 
+### collections
+
+```
+collections:
+	OrderedDict:
+```
+
+
+
+
+
+### concurrent
+
+#### futures
+
+```
+concurrent.futures:
+	ThreadPoolExecutor:
+        ():
+        	max:
+        shutdown():
+		submit():
+```
+
+
+
+
+
 ### csv
 
 ```
@@ -288,6 +348,16 @@ datetime:
 
 
 
+### hashlib
+
+```
+hashlib:
+	sha1():
+		digest():
+```
+
+
+
 ### http
 
 ```
@@ -312,7 +382,8 @@ io:
 ### json
 
 ```
-
+json:
+	dumps():
 ```
 
 
@@ -378,7 +449,11 @@ os.path:
 ### queue
 
 ```
-
+queue:
+	Empty:
+	Queue:
+		get_nowait():
+		put():
 ```
 
 
@@ -400,19 +475,41 @@ random:
 
 
 
+### select
+
+```
+select:
+	EPOLLHUP:
+	EPOLLIN:
+	EPOLLOUT:
+	epoll():
+		modify():
+		poll():
+		registre():
+		unregister():
+	select():
+```
+
+
+
 ### socket
 
 ```
 socket:
+	AF_INET:
+	SOCK_STREAM:
+	create_connection():
 	socket():
 		accept():
 		bind():
 		close():
 		connect():
+		fileno():
 		listen():
 		recv():
 		send():
-		
+		setblocking():
+		setsockopt(): 设置属性
 
 
 
@@ -425,6 +522,17 @@ socket:
 
 ```
 
+```
+
+
+
+### string
+
+```
+string:
+	encode():
+	endswith():
+	format():
 ```
 
 
@@ -458,7 +566,16 @@ sys:
 ### threading
 
 ```
-
+threading:
+	Lock:
+		acquire():
+		release():
+	Thread:
+		():
+            target:
+            args:
+        setDaemon():
+        start():
 ```
 
 
@@ -467,8 +584,19 @@ sys:
 
 ```
 time:
+	sleep():
 	strftime():
 ```
+
+
+
+### tkinter
+
+```
+
+```
+
+
 
 
 
@@ -532,6 +660,22 @@ unittest:
 
 ```
 
+```
+
+
+
+### xmlrpc
+
+```
+xmlrpc:
+	client:
+		ServerProxy:
+			
+	server:
+		SimpleXMLRPCServer:
+			register_function():
+			register_instance():
+			serve_forever():
 ```
 
 
