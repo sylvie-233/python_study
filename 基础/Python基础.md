@@ -221,7 +221,20 @@ array:
 ### asyncio
 
 ```
-
+asyncio:
+	@coroutine:
+	create_task():
+	ensure_future():
+	get_event_loop():
+		run_in_executor():
+        run_until_complete():
+    get_running_loop():
+    	create_future():
+    		set_result():
+    run(): 事件循环执行协程对象
+    set_event_loop_policy():
+	sleep():
+	wait():
 ```
 
 
@@ -232,6 +245,7 @@ array:
 base64:
 	b64encode():
 		decode():
+	standard_b64encode():
 ```
 
 
@@ -304,11 +318,15 @@ collections:
 
 ```
 concurrent.futures:
-	ThreadPoolExecutor:
-        ():
-        	max:
-        shutdown():
-		submit():
+	Future:
+	process:
+		ProcessPoolExecutor:
+	thread:
+        ThreadPoolExecutor:
+            ():
+                max:
+            shutdown():
+            submit():
 ```
 
 
@@ -352,6 +370,8 @@ datetime:
 
 ```
 hashlib:
+	new():
+		hexdigest():
 	sha1():
 		digest():
 ```
@@ -418,6 +438,7 @@ json:
 
 ```
 os:
+	environ: 环境变量
 	mkdir():
 ```
 
@@ -441,7 +462,8 @@ os.path:
 ### pickle
 
 ```
-
+pickle:
+	loads():
 ```
 
 
@@ -452,8 +474,12 @@ os.path:
 queue:
 	Empty:
 	Queue:
+		get():
 		get_nowait():
+		join():
 		put():
+		qsize():
+		task_down():
 ```
 
 
@@ -462,6 +488,7 @@ queue:
 
 ```
 random:
+	choices():
 	randint():
 ```
 
@@ -470,7 +497,8 @@ random:
 ### re
 
 ```
-
+re:
+	findall():
 ```
 
 
@@ -488,6 +516,15 @@ select:
 		registre():
 		unregister():
 	select():
+```
+
+
+
+### signal
+
+```
+signal:
+	signal():
 ```
 
 
@@ -586,6 +623,7 @@ threading:
 time:
 	sleep():
 	strftime():
+	time():
 ```
 
 
@@ -633,7 +671,32 @@ unittest:
 ### urllib
 
 ```
-
+urllib:
+	parse:
+		urlencode():
+		urlparse():
+			fragment:
+			netloc:
+			path:
+			query:
+			geturl():
+	request:
+		HTTPBasicAuthHandler:
+			add_password():
+		ProxyBasicAuthHandler:
+		ProxyHandler:
+		Request:
+			add_header():
+		build_opener():
+			open():
+		install_opener():
+		urlopen():
+			headers:
+				get_all():
+				keys():
+			reason:
+			status:
+			read():
 ```
 
 
@@ -641,7 +704,9 @@ unittest:
 ### uuid
 
 ```
-
+uuid:
+	uuid4():
+		hex
 ```
 
 

@@ -4,7 +4,7 @@
 >
 > Date: 23/1/22
 >
-> Point: 
+> Point: P
 
 [TOC]
 
@@ -400,9 +400,122 @@ input集合
 
 
 
-## API(django)
+## API
+
+### django
 
 ```
+django:
+	apps:
+		AppConfig
+	conf:
+		settings
+	contrib:
+    	admin:
+	core:
+		exceptions:
+			ValidationError:
+		validators:
+			RegexValidator:
+	db: // orm框架
+		backends:
+			mysql:
+		models:
+			CASCADE:
+            BigAutoField:
+            CharField:
+            DateTimeField:
+            DecimalField:
+            FileField:
+                upload_to:
+            ForeignKey:
+                to:
+                to_field:
+                ondelete:
+            IntergerField:
+            SmallIntegerField:
+                choices:
+
+            Model:
+                objects:
+                    all():
+                    create():
+                    exclude():
+                    filter():
+                        QuerySet:
+                            delete():
+                            exists():
+                            first():
+                            get_xxx_display():
+                            order_by():
+                            update():
+                            values():
+                            valuee_list():
+	forms: // ModelForm
+		CharField:
+            label:
+            validators:
+            widget:
+        FileField:
+        Form:
+            cleaned_data:
+            data:
+            files:
+            xxx:
+            add_error():
+            clean_xxx():
+            is_valid():
+        IntegerField:
+        ModelForm:
+            Meta:
+                fields:
+                model:
+                widgets: {
+                    xxx": forms.TextInput()
+                }
+            cleaned_data:
+            data:
+            errors:
+                as_json():
+            xxx:
+                label:
+                errors:
+            instance:
+            clean_xxx(): 字段钩子函数
+            is_valid():
+            save():
+        PasswordInput:
+        TextInput:
+            attrs:
+		utils:
+			ErrorDict:
+	http:
+		JsonResponse:
+	shotcuts:
+		HttpResponse
+        redirect
+		render
+	urls:
+		path():
+		re_path():
+	utils:
+		deprecation:
+			MiddlewareMixin:
+                process_request():
+                process_response():
+		safestring:
+			mark_safe():
+	views:
+		decorators:
+            csrf:
+                csrf_exempt():
+
+
+
+
+
+
+
 request:
 	FILES:
 		name:
@@ -417,222 +530,15 @@ request:
 		set_expiry():
 ```
 
-### apps
 
-#### AppConfig
 
 
 
-### conf
 
-#### settings
 
+### 
 
-
-### contrib
-
-#### admin
-
-
-
-### core
-
-#### exceptions
-
-```
-django.core.exceptions:
-	ValidationError:
-```
-
-
-
-#### validators
-
-```
-django.core.validators:
-	RegexValidator:
-```
-
-
-
-
-
-### db
-
-#### backends:
-
-```
-django.db.backends:
-	mysql:
-```
-
-
-
-#### models
-
-```
-django.db.models:
-	CASCADE:
-	BigAutoField:
-	CharField:
-	DateTimeField:
-	DecimalField:
-	FileField:
-		upload_to:
-	ForeignKey:
-		to:
-		to_field:
-		ondelete:
-	IntergerField:
-	SmallIntegerField:
-		choices:
-		
-	Model:
-		objects:
-            all():
-            create():
-            exclude():
-            filter():
-                QuerySet:
-                    delete():
-                    exists():
-                    first():
-                    get_xxx_display():
-                    order_by():
-                    update():
-                    values():
-                    valuee_list():
-```
-
-
-
-### forms
-
-```
-django.forms:
-	CharField:
-		label:
-		validators:
-		widget:
-	FileField:
-	Form:
-		cleaned_data:
-		data:
-		files:
-		xxx:
-		add_error():
-		clean_xxx():
-		is_valid():
-	IntegerField:
-	ModelForm:
-		Meta:
-			fields:
-			model:
-			widgets: {
-				xxx": forms.TextInput()
-			}
-		cleaned_data:
-		data:
-		errors:
-			as_json():
-		xxx:
-			label:
-			errors:
-		instance:
-		clean_xxx(): 字段钩子函数
-		is_valid():
-		save():
-		
-	PasswordInput:
-	TextInput:
-		attrs:
-```
-
-
-
-#### utils
-
-```
-django.forms.utils:
-	ErrorDict:
-```
-
-
-
-
-
-
-
-### http
-
-```
-django.http:
-	JsonResponse:
-```
-
-
-
-
-
-### shortcuts
-
-#### HttpResponse
-
-#### redirect
-
-#### render
-
-
-
-
-
-### urls
-
-#### path
-
-#### re_path
-
-
-
-
-
-
-
-
-
-### utils
-
-#### deprecation
-
-```
-django.utils.deprecation:
-	MiddlewareMixin:
-		process_request():
-		process_response():
-```
-
-
-
-#### safestring
-
-```
-django.utils.safestring:
-	mark_safe():
-```
-
-
-
-
-
-### views
-
-#### decorators
-
-```
-django.views.decorators:
-	csrf:
-		csrf_exempt():
-```
+#### 
 
 
 
