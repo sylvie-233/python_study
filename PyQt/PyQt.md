@@ -41,7 +41,21 @@ pyuic|pyuic5: 转换为py文件
 
 ## 核心内容
 
+
+
+
+
+
+
+
+
 ## API(PyQt5)
+
+```
+
+```
+
+
 
 ### QtCore
 
