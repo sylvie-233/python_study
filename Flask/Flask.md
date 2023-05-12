@@ -4,7 +4,7 @@
 >
 > Date: 23/1/29
 >
-> Point: P76
+> Point: P89
 
 [TOC]
 
@@ -114,9 +114,16 @@ ORM框架
 
 
 
+### uwsgi
+
+```
+uwsgi:
+	--ini:
+```
 
 
-### uwsgi.ini
+
+#### uwsgi.ini
 
 ```ini
 [uwsgi]
@@ -130,7 +137,7 @@ home = /xxx
 chdir = /www/wwwroot/xxx
 wsgi-file = %(chdir)/app.py
 callable = app
-# http = x.x.x.x:x
+# http = x.x.x.x:x （对接nginx）
 socket = x.x.x.x:x
 
 
@@ -445,6 +452,7 @@ flask_restful:
 			absolute:
 	reqparse: 请求参数校验
 		RequestParser:
+            ---
 			add_argument():
 				action:
 					append:
@@ -536,10 +544,14 @@ flask_sqlalchemy:
 		String:
 		Table: 定义表
 		session:
+        	Query:
+        		with_loackmode():
+                    update:
 			add():
 			add_all():
 			delete():
 			commit():
+			rollback():
 		backref():
 			lazy:
 		create_all(): 创建数据库 

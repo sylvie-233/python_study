@@ -49,6 +49,22 @@ location /xxx {
 
 
 
+django数据库表
+
+```
+:
+	django_content_type:
+	auth_user:
+	auth_permission:
+	auth_group: 权限组
+	auth_user_user_permissions:
+	auth_user_group:
+	auth_group_permissions:
+	django_admin_log:
+```
+
+
+
 
 
 
@@ -529,16 +545,6 @@ request:
 		clear():
 		set_expiry():
 ```
-
-
-
-
-
-
-
-### 
-
-#### 
 
 
 
