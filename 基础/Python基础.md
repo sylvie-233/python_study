@@ -411,8 +411,67 @@ json:
 ### logging
 
 ```
+logging:
+	INFO:
+	FileHandler:
+		---
+		addFilter():
+		setFormatter():
+	Filter:
+	Formatter():
+	Logger:
+		---
+		addFilter():
+		addHandler():
+		critical():
+		debug():
+		error():
+		info():
+		setLevel():
+		warning():
+	getLogger():
+```
+
+
+
+Loggers
+
+
+
+Handlers
+
+
+
+Filters
+
+
+
+Formatters
 
 ```
+:
+	%(levelno)s:
+	%(levelname)s:
+	%(pathname)s:
+	%(filename)s:
+	%(funcName)s:
+	%(lineno)s:
+	%(asctime)s:
+	%(thread)s:
+	%(threadname)s:
+	%(process)s:
+	%(message)s:
+```
+
+
+
+
+
+
+
+
+
+
 
 
 

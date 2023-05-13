@@ -204,7 +204,44 @@ INSTALLED_APPS = [
 	“自定义应用AppConfig”
 ]
 
-# medi
+# log日志配置
+LOGGING = {
+	"version": 1,
+	"disable_existing_loggers": False,
+	"formatters": {
+		"standard": {
+			"format" "%(message)s"
+		}
+	},
+	"filters": {
+		"require_debug_true": {
+			"{}": "django.utils.log.RequireDebugTrue"
+		}
+	},
+	"handlers": {
+		"null": {
+			"level": "DEBUG",
+			"class": "logging.NullHandler",
+		},
+		"debug": {
+			"level": "DEBUG",
+			"class": "logging.handlers.RotatingFileHandler",
+			"filename": os.path.join(BASE_DIR, "log", "debug.log"),
+			"maxBytes": 1024 * 1024 * 5,
+			"backupCount": 5,
+			"formatter": "standard",
+		}
+	},
+	"loggers": {
+		"django.request": {
+			"handlers": ["debug"],
+			"level": "DEBUG",
+			"propagate": True,
+		}
+	}
+}
+
+# media
 MEDIA_ROOT = /xxx
 MEDIA_URL = "/xx"
 
@@ -467,6 +504,13 @@ django:
                             update():
                             values():
                             valuee_list():
+		transaction:
+        	atomic():
+        	commic():
+        	rollback():
+        	savepoint():
+        	savepoint_commit():
+        	savepoint_rollback():
 	forms: // ModelForm
 		CharField:
             label:
@@ -506,6 +550,7 @@ django:
 		utils:
 			ErrorDict:
 	http:
+		HttpResponse:
 		JsonResponse:
 	shotcuts:
 		HttpResponse
@@ -519,6 +564,7 @@ django:
 			MiddlewareMixin:
                 process_request():
                 process_response():
+        log:
 		safestring:
 			mark_safe():
 	views:
@@ -529,9 +575,7 @@ django:
 
 
 
-
-
-
+---
 request:
 	FILES:
 		name:

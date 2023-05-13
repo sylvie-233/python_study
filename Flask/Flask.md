@@ -4,7 +4,7 @@
 >
 > Date: 23/1/29
 >
-> Point: P89
+> Point: 
 
 [TOC]
 
@@ -275,6 +275,27 @@ jinja2
 
 
 
+#### 一对多
+
+```
+classs Xxx(BaseModel):
+	xxx = db.relationship("XxxXxx", backref="Xxx", lazy=True)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### hook函数
 
 中间件实现、装饰器
@@ -328,6 +349,7 @@ flask:
 			host:
 			port:
 	current_app:
+		logger:
 	g:
 	request:
 		args:
@@ -551,6 +573,10 @@ flask_sqlalchemy:
 			add_all():
 			delete():
 			commit():
+			having():
+			group_by():
+			join():
+			query():
 			rollback():
 		backref():
 			lazy:
