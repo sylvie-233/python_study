@@ -341,6 +341,18 @@ concurrent.futures:
 
 
 
+### ctypes
+
+```
+ctypes:
+	cdll:
+		LoadLibrary:
+```
+
+
+
+
+
 ### datetime
 
 ```
