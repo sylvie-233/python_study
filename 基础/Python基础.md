@@ -149,6 +149,43 @@ jupyter:
 
 
 
+### 数据类型
+
+```
+TypeHint:
+	Any:
+	Callable:
+		Callable[[argType], returnType]:
+	dict:
+		dict[xxx, xxx];
+	int:
+	list:
+		List:
+		list[xxx]:
+	Literal:
+	NewType:
+	None;
+	NoReturn:
+	Optional:
+		Optional[xxx]:
+	Sequence:
+	str:
+	tuple:
+		tuple[xxx]:
+	Union:
+		Union[xxx, xxx];
+		|:
+	“xxx”:
+```
+
+
+
+`mypy`类型检查
+
+`typing`内置类型库
+
+
+
 
 
 
