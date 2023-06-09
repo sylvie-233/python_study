@@ -4,7 +4,7 @@
 >
 > Date: 23/1/22
 >
-> Point: P
+> Point: P8
 
 [TOC]
 
@@ -12,7 +12,7 @@
 
 
 
-项目目录结构：
+`目录结构`
 
 ```
 django项目：
@@ -22,13 +22,14 @@ django项目：
 		urls.pu
 		wsgi.py
 	/app目录:
-		/migrations:
+		/migrations: 数据库迁移文件
 		admin.py:
 		apps.py:
 		models.py:
 		tests.py:
-		views.py:
-	/templates:
+		urls.py: 仿造项目urls.py的子路由
+		views.py: 视图逻辑处理函数
+	/templates: 模板目录(公用)
 	manage.py:
 ```
 
@@ -75,7 +76,7 @@ django数据库表
 
 ```
 django-admin:
-	startproject
+	startproject:
 ```
 
 
@@ -88,10 +89,11 @@ django-admin:
 manage.py:
 	collectstatic: 收集静态文件
 	createsuperuser:
-	makemigrations:
-	migrate:	
-	runserver:
-	startapp:
+	makemigrations: 生成迁移文件
+	migrate: 数据库迁移
+	runserver: 运行服务
+		
+	startapp: 创建app	
 	
 ```
 
@@ -158,13 +160,22 @@ gunicorn:
 
 ### 项目配置
 
-#### settings配置
+#### settings.py
 
 settings.py
 
 ```
 # 主机
 ALLOWED_HOSTS = []
+
+
+# 密码校验器
+AUTH_PASSWORD_VALIDATORS = [
+	{
+		"NAME": 'django.contrib.auth.password_validation.UserAttributeSimilariryValidator'
+	},
+]
+
 
 # 项目根目录
 from pathlib import Path
@@ -203,6 +214,9 @@ INSTALLED_APPS = [
 	"django.contrib.staticfiles",
 	“自定义应用AppConfig”
 ]
+
+# 语言
+LANGUAGE_CODE = 'zh-hans'
 
 # log日志配置
 LOGGING = {
@@ -290,7 +304,7 @@ WSGI_APPLICATION = "xxx.wsgi.applicaion"
 
 
 
-#### urls配置
+#### urls.py
 
 urls.py
 
@@ -304,7 +318,7 @@ urlpatterns = [
 
 
 
-#### asgi配置
+#### asgi.py
 
 asgi.py
 
@@ -314,7 +328,7 @@ asgi.py
 
 
 
-#### wsgi配置
+#### wsgi.py
 
 wsgi.py
 
@@ -326,7 +340,33 @@ wsgi.py
 
 
 
-### 模板引擎
+
+
+### View
+
+视图处理函数
+
+
+
+#### request
+
+```
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Jinja2
 
 
 
@@ -357,6 +397,10 @@ wsgi.py
 
 # 模板函数
 date
+
+
+
+
 
 # 继承
 {% block xxx %} {% endblock %}
@@ -391,10 +435,12 @@ django_session
 
 
 
+#### Model
+
 Model实例
 
 ```
-Xxx:
+Model实例:
 	objects:
 		all():
 		create():
@@ -407,6 +453,10 @@ Xxx:
                 delete():
                 first():
                 update():
+        get():
+	---
+    delete():
+	save():
 ```
 
 
@@ -488,8 +538,9 @@ django:
             IntergerField:
             SmallIntegerField:
                 choices:
-
+			---
             Model:
+            	---
                 objects:
                     all():
                     create():
@@ -555,10 +606,12 @@ django:
 	shotcuts:
 		HttpResponse
         redirect
-		render
+		render():
 	urls:
+		include(): 包含子路由
 		path():
 		re_path():
+		url(): 路由映射处理
 	utils:
 		deprecation:
 			MiddlewareMixin:
