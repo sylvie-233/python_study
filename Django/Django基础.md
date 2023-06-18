@@ -4,7 +4,7 @@
 >
 > Date: 23/1/22
 >
-> Point: P8
+> Point: P10
 
 [TOC]
 
@@ -92,6 +92,7 @@ manage.py:
 	makemigrations: 生成迁移文件
 	migrate: 数据库迁移
 	runserver: 运行服务
+	shell:
 		
 	startapp: 创建app	
 	
@@ -437,7 +438,7 @@ django_session
 
 #### Model
 
-Model实例
+`Model实例`
 
 ```
 Model实例:
@@ -457,6 +458,17 @@ Model实例:
 	---
     delete():
 	save():
+```
+
+
+
+`Model定义`
+
+```
+django.db.models:
+	CharField:
+		max_length:
+	ForeignKey:
 ```
 
 
@@ -607,6 +619,11 @@ django:
 		HttpResponse
         redirect
 		render():
+	template:
+		loader:
+			get_template():
+				---
+				render():
 	urls:
 		include(): 包含子路由
 		path():
