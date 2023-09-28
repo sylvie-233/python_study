@@ -4,7 +4,7 @@
 >
 >Date: 23/1/26
 >
->Point: P11
+>Point: 
 
 [TOC]
 
@@ -49,7 +49,7 @@ pyuic|pyuic5: 转换为py文件
 
 
 
-## API(PyQt5)
+## API
 
 ```
 

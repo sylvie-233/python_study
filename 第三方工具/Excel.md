@@ -4,7 +4,11 @@
 >
 > Date: 23/2/23
 >
-> Point: P19
+> Point: 
+>
+> ​	Excel函数与公式教程（36集合集）P13
+>
+> ​	WPS JS宏编程教学：P2
 
 [TOC]
 
@@ -218,6 +222,16 @@
 
 ### 数据
 
+有效性可以设置数据校验
+
+
+
+
+
+
+
+
+
 #### 获取和转换数据
 
 ##### 自网站
@@ -318,20 +332,41 @@
 
 ```
 :
-	average():
-	averageif():
+	and(): 多个条件成立
+	average(): 平均值
+	averagea(): 平均值（可求逻辑值、文本）
+	averageif(): 平均值（条件区域）
+	averageifs(): 平均值（多条件区域）
 	count():
 	counta(): 非空单元格个数
 	countblank(): 空值个数
 	countif():
 	countifs():
-	if():
+	datedif(): 
+	if(): 条件选择值
+		logical_test: 逻辑判断值
+		value_if_true:
+		value_if_false:
+	left():
+	mid():
+	not(): 逻辑值求反
+	now(): 当前时间日期
+	or(): 至少有一个条件成立
 	rank():
-	sum():
+	right():
+	sum(): 求和
 	sumif():
+		range: 名称区域
+		criteria: 名称
+		[sum_range]: 求和区域
 	sumifs():
 	sumproduct():
-	vlookup():
+	today(): 当前日期
+	vlookup(): 连表查询
+		lookup_value: 要查找的值
+		table_array: 表的数据
+		col_index_num: 列索引
+		[range_lookup]: 模糊匹配
 ```
 
 
@@ -361,5 +396,52 @@
 
 
 
+## WPS宏
 
+启用宏的工作簿：`.xlsm`
+
+
+
+```
+:
+	Dir():
+	InputBox():
+	Range():
+		Interiro:
+			Color:
+		Select():
+	Selection:
+		Formula:
+		Interior:
+			Color:
+			Pattern:
+			PatternColorIndex:
+			TintAndShade:
+	ThisWorkbook:
+		Path:
+		Close():
+		Sheets():
+			Activate():
+			Rows():
+				Copy():
+	Workbooks:
+		Open():
+```
+
+
+
+
+
+
+
+
+
+## 快捷键
+
+- `alt`+`=`：选中区域快速求和
+- `ctrl`+`1`：单元格格式
+- `ctrl`+`t`：创建表
+- `f4`：切换相对引用与绝对引用
+- 双击格式刷：持久化格式刷
+- 
 
