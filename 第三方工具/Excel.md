@@ -6,9 +6,8 @@
 >
 > Point: 
 >
-> ​	Excel函数与公式教程（36集合集）P13
+> ​	【Excel高阶】宏与VBA，办公自动化！：P12
 >
-> ​	WPS JS宏编程教学：P2
 
 [TOC]
 
@@ -337,36 +336,57 @@
 	averagea(): 平均值（可求逻辑值、文本）
 	averageif(): 平均值（条件区域）
 	averageifs(): 平均值（多条件区域）
-	count():
+	column(): 返回列号
+	columns(): 返回列数
+	count(): 数字个数
 	counta(): 非空单元格个数
 	countblank(): 空值个数
 	countif():
 	countifs():
 	datedif(): 
+	false():
+	find():
 	if(): 条件选择值
 		logical_test: 逻辑判断值
 		value_if_true:
 		value_if_false:
+	index():
+	int():
 	left():
+	len():
+	max():
+	match():
 	mid():
+	min():
 	not(): 逻辑值求反
 	now(): 当前时间日期
 	or(): 至少有一个条件成立
 	rank():
 	right():
+	round():
+		num:
+		num_digits:
+	rounddown():
+	roundup():
+	row(): 返回行号
+	rows(): 返回行数
 	sum(): 求和
 	sumif():
 		range: 名称区域
 		criteria: 名称
 		[sum_range]: 求和区域
-	sumifs():
-	sumproduct():
+	sumifs(): 求和（多条件）
+	sumproduct(): 区域乘积求和
 	today(): 当前日期
+	true():
+	trunc(): 数字截取
+	value():
 	vlookup(): 连表查询
 		lookup_value: 要查找的值
 		table_array: 表的数据
 		col_index_num: 列索引
 		[range_lookup]: 模糊匹配
+			模糊匹配返回符合条件的最后一个
 ```
 
 
@@ -394,6 +414,198 @@
 
 ## VBA
 
+```
+VBA:
+	xlAutomatic:
+	xlPasteFormats:
+	xlPasteValues:
+	xlSheetVisible:
+	xlUp:
+	ActiveCell:
+	ActiveSheet:
+	ActiveWorkbook:
+		RefreshAll:
+	ADODB:
+		Connection:
+			Open():
+			OpenSchema():
+	Application:
+		DisplayAlerts:
+		FileDialog:
+			():
+			SelectedItems:
+			Show:
+		ScreenUpdating:
+	Button:
+		Characters:
+			Text:
+		Name:
+		OnAction:
+	Buttons:
+		Add:
+			():
+	Cell:
+		Offset:
+			(): 
+		Range:
+			():
+	Cells:
+		():
+		ClearContents:
+		Interior:
+			ColorIndex:
+	Columns:
+		():
+		ClearContents:
+	DateSerial:
+	Dir:
+		():
+	Err:
+		Clear:
+	InputBox:
+	Kill:
+	MsgBox:
+	Name:
+	Nothing:
+	Range:
+		():
+		Activate:
+		Cells:
+			():
+		Clear:
+		Columns:
+			Count:
+		CurrentRegion:
+		MergeArea:
+		NumberFormat:
+		PasteSpecial:
+			():
+				Paste:
+		Resize:
+			():
+		Rows:
+			Count:
+		Select:
+		UnMerge:
+		Value:
+	Rows:
+		():
+		Count:
+		Interior:
+			ColorIndex:
+	Scripting:
+		Dictionary:
+	Selecttion:
+		Font:
+			Bold:
+			ThemeColor:
+			TintAndShade:
+		HorizontalAlignment:
+		IndentLevel:
+		Interior:
+		MergeCells:
+		NumberFormatLocal:
+		Orientation:
+		Pattern:
+		PatternColorIndex:
+		PatternTintAndShade:
+		ReadingOrder:
+		ShrinkTOFit:
+		ThemeColor:
+		TintAndShade:
+		VerticalAlignment:
+		WrapText:
+	ThisWorkbook:
+	Worksheet:
+		Activate:
+		Cells:
+			Copy:
+				():
+			Value:
+			End():
+				Row:
+		ChangeFileAccess:
+		Close:
+		Delete:
+		Hyperlinks:
+			Add:
+		Name:
+		Path:
+		Protect:
+		SaveAs:
+			():
+		Shapes:
+			():
+		UnProtect:
+		UsedRange:
+		Visible:
+		
+	Worksheets:
+		Add:
+		
+	Sheets:
+		():
+		Count:
+	CreateObject():
+	Right():
+	UBound() 边界值
+	Val():
+```
+
+
+
+
+
+Visual Basic
+
+```
+Sub xxx()
+	Dim xxx As xxx类型,
+	
+	Set xxx = xxx
+	
+	For i = 1 To 100
+		...
+	Next
+	
+	For Each xxx In Worksheets:
+		...
+	Next
+	
+	Do While ...
+		...
+	Loop
+	
+	If xxx Then
+		...
+	End If
+	
+	With xxx
+		...
+	End With
+	
+	OnError Resume Next
+	
+End Sub
+	
+	
+数据类型:
+	Array:
+	CStr:
+	Date:
+	Long:
+	Object:
+	String:
+	
+	
+```
+
+
+
+
+
+Microsoft Excel对象、模块
+
 
 
 ## WPS宏
@@ -402,14 +614,38 @@
 
 
 
+js宏
+
+
+
+
+
 ```
 :
+	Cells():
+		Value2:
 	Dir():
 	InputBox():
-	Range():
+	MsgBox():
+	Range(): 单元格区域
 		Interiro:
 			Color:
+		Borders: 边框
+			Color:
+		Row:
+		Value2: 值操作
+		Copy():
+		End():
 		Select():
+	Application: 全局变量（应用）
+		ActiveWorkbook:
+		Env:
+			GetTempPaht():
+		FileSystem:
+			Exists():
+		Sheets:
+		WorkSheets:
+			Item():
 	Selection:
 		Formula:
 		Interior:
@@ -417,14 +653,46 @@
 			Pattern:
 			PatternColorIndex:
 			TintAndShade:
+	Sheet:
+		Name:
+		Cells(): 
+		Column():
+			Find():
+			FindNext():
+		Copy(): 复制一个工作表（返回工作簿）
+		Delete(): 
+		Range(): 单元格区域
+	Sheets:
+        Count: 工作表数量
+        Add(): 添加工作表
 	ThisWorkbook:
-		Path:
+		Name:
+		Path: 文件路径
 		Close():
-		Sheets():
+		Save():
+		SaveAs():
+		Sheets(): 获取工作表
 			Activate():
 			Rows():
 				Copy():
+	UserForm:
+		StartUpPostion:
+		Close():
+		Show():
+		CheckBox:
+		ComboBox:
+			AddItem():
+		CommmandButton:
+			Caption:
+		Frame:
+		Label:
+		OptionButton:
+		Page:
+		TextEdit:
+			Text:
+		ToggleButton:
 	Workbooks:
+		Add():
 		Open():
 ```
 
@@ -441,6 +709,7 @@
 - `alt`+`=`：选中区域快速求和
 - `ctrl`+`1`：单元格格式
 - `ctrl`+`t`：创建表
+- `ctrl`+`shift`+`enter`: 转为数组形式
 - `f4`：切换相对引用与绝对引用
 - 双击格式刷：持久化格式刷
 - 

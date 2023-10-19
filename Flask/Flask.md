@@ -343,6 +343,7 @@ flask:
         @errorhandler():
 		@route():
 		@teardown_request():
+		---
 		register_blueprint():
 		run():
 			debug: 调试模式
