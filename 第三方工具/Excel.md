@@ -6,8 +6,9 @@
 >
 > Point: 
 >
-> ​	【Excel高阶】宏与VBA，办公自动化！：P12
+> ​	【Excel高阶】宏与VBA，办公自动化！：P15
 >
+> ​	【PPT教程】WPS2019全套新手自学教程，从零基础开始超详细讲解（完结）：P17
 
 [TOC]
 
@@ -487,7 +488,7 @@ VBA:
 			Count:
 		Select:
 		UnMerge:
-		Value:
+		Value: 内容
 	Rows:
 		():
 		Count:
@@ -591,13 +592,22 @@ End Sub
 	
 数据类型:
 	Array:
+	Boolean:
+	Byte:
 	CStr:
+	Currency:
 	Date:
+		#...#:
+	Double:
+	Integer:
 	Long:
 	Object:
+	Single:
 	String:
+		&: 字符串拼接
 	
 	
+Call 函数名: 直接调用函数
 ```
 
 
