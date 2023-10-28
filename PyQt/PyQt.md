@@ -4,7 +4,9 @@
 >
 >Date: 23/1/26
 >
->Point: P11
+>Point: 
+>
+>​	PyQt5从入门到实践：P3
 
 [TOC]
 
@@ -49,10 +51,20 @@ pyuic|pyuic5: 转换为py文件
 
 
 
-## API(PyQt5)
+## API
 
 ```
-
+PyQt5:
+	QtWidgets:
+		QApplication:
+			---
+			exec_():
+		QWidget:
+			---
+			move():
+			resize():
+			setWindowTitle():
+			show():
 ```
 
 

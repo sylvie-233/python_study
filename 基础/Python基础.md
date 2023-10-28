@@ -3,6 +3,10 @@
 >Author: Sylvie233
 >
 >Date: 2022/11/30
+>
+>Point:
+>
+>​	26个Python实战项目: P4
 
 [TOC]
 
@@ -158,10 +162,15 @@ TypeHint:
 		Callable[[argType], returnType]:
 	dict:
 		dict[xxx, xxx];
+		get():
+		values():
 	int:
 	list:
 		List:
 		list[xxx]:
+		append():
+		index():
+		remove():
 	Literal:
 	NewType:
 	None;
@@ -170,8 +179,10 @@ TypeHint:
 		Optional[xxx]:
 	Sequence:
 	str:
+		format():
 	tuple:
 		tuple[xxx]:
+		
 	Union:
 		Union[xxx, xxx];
 		|:
@@ -328,6 +339,9 @@ builtins:
 	next():
 	object():
 	open():
+		mode:
+		encoding:
+		
 	print():
 	property():
 	range():
@@ -739,7 +753,42 @@ time:
 ### tkinter
 
 ```
-
+tkinter:
+	Button:
+		command:
+		show:
+		---
+	Entry:
+		textvariable:
+		---
+	Frame:
+		---
+		destroy():
+		focus_force():
+		forget():
+		grid():
+		pack():
+	Label:
+		text:
+		width:
+		---
+		grid():
+			row:
+			column:
+	Menu:
+		---
+		add_command():
+			label
+	StringVar:
+		---
+		get():
+		set():
+	Tk:
+		---
+		geometry():
+		mainloop():
+		quit():
+		title():
 ```
 
 
