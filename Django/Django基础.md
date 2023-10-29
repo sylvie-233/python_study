@@ -4,7 +4,9 @@
 >
 > Date: 23/1/22
 >
-> Point: P10
+> Point:  
+>
+> ​	
 
 [TOC]
 
@@ -256,7 +258,7 @@ LOGGING = {
 	}
 }
 
-# media
+# media媒体文件目录
 MEDIA_ROOT = /xxx
 MEDIA_URL = "/xx"
 
@@ -497,6 +499,12 @@ input集合
 
 
 
+### Admin
+
+
+
+### DRF
+
 
 
 
@@ -522,11 +530,24 @@ input集合
 ```
 django:
 	apps:
-		AppConfig
+		AppConfig:
+			name:
+			verbose_name:
 	conf:
 		settings
 	contrib:
     	admin:
+    		site:
+    			site_header:
+    			register():
+    		register():
+    		ModelAdmin:
+    			fields:
+    			fieldset:
+    			inlines:
+    			list_display:
+    			list_filter:
+    			search_fields:
 	core:
 		exceptions:
 			ValidationError:
@@ -541,6 +562,7 @@ django:
             CharField:
             DateTimeField:
             DecimalField:
+            F:
             FileField:
                 upload_to:
             ForeignKey:
@@ -548,6 +570,7 @@ django:
                 to_field:
                 ondelete:
             IntergerField:
+            Q:
             SmallIntegerField:
                 choices:
 			---
@@ -558,6 +581,7 @@ django:
                     create():
                     exclude():
                     filter():
+               		get():
                         QuerySet:
                             delete():
                             exists():
@@ -588,6 +612,9 @@ django:
             add_error():
             clean_xxx():
             is_valid():
+        ImageField:
+        	upload_to:
+        	verbose_name:
         IntegerField:
         ModelForm:
             Meta:
@@ -605,6 +632,7 @@ django:
                 errors:
             instance:
             clean_xxx(): 字段钩子函数
+            delete():
             is_valid():
             save():
         PasswordInput:
@@ -658,6 +686,15 @@ request:
 	session:
 		clear():
 		set_expiry():
+```
+
+
+
+### restful_framework
+
+```
+restful_framework:
+	
 ```
 
 
