@@ -7,10 +7,8 @@
 > Point: 
 >
 > ​	【Excel高阶】宏与VBA，办公自动化！：P15
->
-> ​	【PPT教程】WPS2019全套新手自学教程，从零基础开始超详细讲解（完结）：P17
-
-[TOC]
+> ​	【PPT教程】WPS2019全套新手自学教程，从零基础开始超详细讲解（完结）：P34
+> 	【文字教程】WPS2019全套新手自学教程，从零开始超详细讲解（完结）：P5
 
 ## 基础介绍
 
@@ -392,20 +390,51 @@
 
 
 
-### 语句
+### 域
 
 ```
-:
-	
+域: {}
+	Date:
+	Eq:
+	Filename: 文件名
+	Page:
+	PageRef:
+	Print:
+	PrintDate:
+	Private:
+	Quote:
+	RD:
+	Ref:
+	Section:
+	SectionPages:
+	Seq:
+		标识符:
+		[书签]:
+		[开关]:
+			\c: 沿用上一个编号
+			\h: 隐藏编号 
+			\r: 重置编号
+			CHINESENUM3:
+	Set:
+	Subject:
+	Time:
+		\@:
+	Toc:
+		\c:
+		\h:
+		\O:
+		\z:
 ```
 
 
+构建基块
+域开关：通用开关、域专用开关
+`F9`：更新域
 
 
 
 
-
-### Power Query
+## Power Query
 
 
 

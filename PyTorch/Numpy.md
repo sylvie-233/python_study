@@ -1,12 +1,9 @@
 # Numpy基础
 
 >Author: Sylvie233
->
 >Date: 2022/11/27
->
->Point:  
+>Point:  Python数据分析三剑客 数学建模基础 numpy、pandas、matplotlib：P2
 
-[TOC]
 
 ## 基础介绍
 
@@ -37,8 +34,8 @@ ndarray
 运算的广播机制
 
 维度相同的广播计算
+![](Numpy基础.assets/image-20221202102355696.png)
 
-<img src="Numpy基础.assets/image-20221202102355696.png" alt="image-20221202102355696" style="zoom:67%;" />
 
 
 
@@ -46,40 +43,74 @@ ndarray
 
 ```
 numpy:
+	bool:
+	e:
+	flaot32:
+	inf: 浮点类型
+	int32:
+	int64:
+	pi:
+	str:
 	nan: 浮点类型
+	newaxis:
+	uint8:
 	arange(): 范围生成
 		start:
 		stop:
 		step:
 	array(): np数组生成
-		dtype: 类型
+		dtype: 数据类型
+		shape: 维度
+		astype(): 数据类型转换
 	eye(): 对角线
-	inf: 浮点类型
+	identity(): 单位矩阵
+	linspace(): 间距生成
 	ones():
+	ones_like():
 	random:
         normal():
-        rand():
+        rand(): 随机值
         randn():
         ranint():
         seed():
         uniform():
+    tril():
+    triu():
 	zeros(): 
 	----------------------------
 	argmax(): 维度最大值索引
 		axis: 维度（0、1、2）
 	argmin():
+	argwhere():
 	clip(): 值范围裁剪
+	conxcatenate():
+		axis:
 	copy(): 复制拷贝
+	cos():
 	count_nonzero(): 非零计数
+	cumsum():
+	diag(): 对角线元素
+	dot(): 点乘（内积）
+	full():
 	hstack(): 列添加
+	isinf():
 	isnan(): 
+	log():
+	logspace():
+	matmul(): 矩阵乘法（@）
 	mean(): 平均值
 		axis
 	median(): 中位数
+	outer(): 外积
+	power():
 	ptp(): 极值差
 	round(): 
+	sin():
+	sqrt():
+	squeeze(): 去除冗余的维度
 	std(): 标准差
 	sum(): 和
+	swapaxes(): 交换维度
 	vstack(): 行添加
 	where(): 条件赋值	
 	
@@ -95,7 +126,7 @@ numpy:
 
 ndarray:
 	dtype: 类型（int64/bool/int32/float32/i1/f4/d/complex64）
-	shape: 形状
+	shape: 维数形状
 	T: 转置
 	[]: 切片
 		start:
@@ -103,14 +134,22 @@ ndarray:
 		step:
 		,: 维度分隔
     ----------------------------
+    argmax():
+    argmin():
 	astype(): 类型转换
 	flatten(): 展开
 	reshape(): 形状改变
 		-1: 待定
 	max():
+	mean():
+	median():
 	min():
+	std():
+	sum():
+		axis:
 	swapaxes(): 交换轴
 	transpose(): 转置
+	var():
 ```
 
 
@@ -124,8 +163,6 @@ ndarray:
 安装：
 
 ```
-
-
 import pandas as pd
 ```
 
@@ -150,7 +187,10 @@ nan值不会参与运算
 ### 常用API
 
 ```
-pandas(pd):
+pandas: pd
+	core:
+		frame:
+			DataFrame:
 	nan:
     crosstab(c1, c2): （c1为新行、c2为新列）
     date_range(): 时间索引
@@ -241,7 +281,7 @@ DataFrame: 数据框（二维，多维Series（列），类似数据库的表）
 			labels: 索引标签
 			names: 索引名
 	columns: 列索引
-	values: np.array类型
+	values: np.array类型（值）
 	ndim: 数据维度
 	[]: 切片/索引（列索引为Series，df[行索引]["列索引"]）
 	
