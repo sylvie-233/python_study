@@ -2,7 +2,7 @@
 
 > Author: Sylvie233
 > Date: 23/10.30
-> Point: 12堂颠覆传统的Word进阶必修课：P2
+> Point:  毕业论文格式设置：P3
 
 ## 基础介绍
 ### 选项

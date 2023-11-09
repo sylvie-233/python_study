@@ -2,7 +2,7 @@
 
 >Author: Sylvie233
 >Date: 23/10.29
->Point：LaTeX入门教程：P9
+>Point：LaTeX入门教程：P10
 
 
 ## 基础介绍
@@ -79,6 +79,7 @@ latex:
 		\prod{}:
 		\sigma:
 		\sin{}:
+		\smallmatrix:
 		\sqrt[]{}: 根式
 		\subseteq:
 		\subsetneqq:
@@ -120,6 +121,10 @@ latex:
 				\keywords{}: 关键字
 			align: 对齐
 				&: 对齐符号
+			array: 矩阵
+				\hline: 
+			bmatrix:
+			Bmatrix:
 			document: 文档开始
 			description: 描述
 			enumerate: 有序列表开始
@@ -146,8 +151,17 @@ latex:
 				\notag:
 			itemize: 无序开始
 				\item[]: 列表元素
-					[]: 自定义符号		
+					[]: 自定义符号	
+			matrix: 矩阵
+				\cdots: 
+				\ddots:
+				\multicolumn{}{}{}:
+				\vdots:
+					
+			pmatrix:
 			verbatim: 行内代码
+			vmatirx:
+			Vmatrix:
 	\date{}: 日期
 		\today:
 	\documentclass[]{}
