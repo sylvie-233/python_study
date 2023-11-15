@@ -2,7 +2,8 @@
 
 > Author: Sylvie233
 > Date: 23/10.30
-> Point:  毕业论文格式设置：P3
+> Point:  
+> 	【文字教程】WPS2019：P4
 
 ## 基础介绍
 ### 选项
