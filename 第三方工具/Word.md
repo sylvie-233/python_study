@@ -2,7 +2,8 @@
 
 > Author: Sylvie233
 > Date: 23/10.30
-> Point: 12堂颠覆传统的Word进阶必修课：P2
+> Point:  
+> 	【文字教程】WPS2019：P4
 
 ## 基础介绍
 ### 选项
