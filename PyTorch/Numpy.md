@@ -52,6 +52,7 @@ numpy:
 	pi:
 	str:
 	nan: 浮点类型
+	ndarray:
 	newaxis:
 	uint8:
 	arange(): 范围生成
@@ -78,10 +79,15 @@ numpy:
     triu():
 	zeros(): 
 	----------------------------
+	dtype:
+	ndim:
+	shape:
+	size:
 	argmax(): 维度最大值索引
 		axis: 维度（0、1、2）
 	argmin():
 	argwhere():
+	astype():
 	clip(): 值范围裁剪
 	conxcatenate():
 		axis:
