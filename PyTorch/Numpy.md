@@ -2,7 +2,7 @@
 
 >Author: Sylvie233
 >Date: 2022/11/27
->Point:  Python数据分析三剑客 数学建模基础 numpy、pandas、matplotlib：P2
+>Point:  Python数据分析三剑客 数学建模基础 numpy、pandas、matplotlib：P5
 
 
 ## 基础介绍
@@ -189,6 +189,10 @@ series、dataframe（series容器）
 nan值不会参与运算
 
 
+### 数据透视
+
+
+
 
 ### 常用API
 
@@ -215,6 +219,13 @@ pandas: pd
         day:
 		hour:
 		freq:
+	pivot_table(): 数据透视表
+		df:
+		index:
+		values:
+		aggfunc: 聚合函数指定
+		fill_value: 异常值处理
+		margins: 汇总
     Series(): 序列
     	index: 索引指定
     --------------------------------
@@ -235,7 +246,11 @@ pandas: pd
 	--------------------------------
 	read_csv():
 		names: []（列名）
+	read_excel():
 	read_sql(): sql执行数据
+	set_option(): 
+		max_columns:
+		max_rows:
 	 
 	 
 string: 字符串
@@ -268,14 +283,22 @@ Series: （带标签的一维数组）
 	
 	argmax():
 	argmin():
-	astype():
+	astype(): 格式转换
+	corr(): 相关系数
+	cov(): 协方差
 	groupby():
 		by: 列值可按其他列中的值进行分组
 	max():
-	mean():
-	median():
+	mean(): 平均数
+	median(): 中位数
 	min():
+	replace(): 数据替换
+		inplace:
+	std(): 标准差
+	sum(): 求和
 	unique(): 去重（列表）
+	value_counts(): 条件计数
+	var():
 	where():
 	
 DataFrame: 数据框（二维，多维Series（列），类似数据库的表）
@@ -293,7 +316,7 @@ DataFrame: 数据框（二维，多维Series（列），类似数据库的表）
 	
 	count(): 计数
 	describe(): 快速综合统计结果（计算、平均值、标准差、中位数）
-	drop(): 删除列
+	drop(): 删除列数据
 		[列名]:
 		axis:
 	dropna(): 删除na行
@@ -319,7 +342,7 @@ DataFrame: 数据框（二维，多维Series（列），类似数据库的表）
 	info(): 相关信息（行数、列数、）
 	isin(): in过滤
 	join(): 默认按行索引相同合并
-	loc[]: 根据标签索引数据 
+	loc[]: 索引数据(可修改) 
 	mean(): 平均值
 	merge(): 按字段连接（默认inner）
 		df:
@@ -343,12 +366,13 @@ DataFrame: 数据框（二维，多维Series（列），类似数据库的表）
 	set_index(): 使指定列的值成为索引
 	sort_values(): 排序
 		by: 列索引名
-		ascending: 升序
+			[]
+		ascending: 升序(默认)
 	sum(): 求和
 		axis: 0所有行（剩列）
 	swaplevel(): 交换索引层级
 	tail(): 
-	
+	to_excel(): 保存到excel表中
 
 ```
 
