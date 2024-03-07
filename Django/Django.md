@@ -5,16 +5,19 @@
 > Date: 23/1/22
 >
 > Point:  
->
+>	Python-Django手把手从零开发个人博客：P26
 > ​	
 
-[TOC]
 
 ## 基础介绍
 
 
+一个项目中可以有多个app应用
 
-`目录结构`
+
+
+
+#### 目录结构
 
 ```
 django项目：
@@ -25,11 +28,14 @@ django项目：
 		wsgi.py
 	/app目录:
 		/migrations: 数据库迁移文件
-		admin.py:
-		apps.py:
+		/static: 静态文件
+		/templates: 视图模板文件
+		admin.py: 管理后台设置
+		apps.py: 应用配置
+		forms.py: ModelForm表单、字段校验
 		models.py:
 		tests.py:
-		urls.py: 仿造项目urls.py的子路由
+		urls.py: 项目urls.py的子路由
 		views.py: 视图逻辑处理函数
 	/templates: 模板目录(公用)
 	manage.py:
@@ -78,7 +84,8 @@ django数据库表
 
 ```
 django-admin:
-	startproject:
+	startproject: 脚手架项目
+	
 ```
 
 
@@ -96,7 +103,7 @@ manage.py:
 	runserver: 运行服务
 	shell:
 		
-	startapp: 创建app	
+	startapp: 创建app应用
 	
 ```
 
@@ -167,7 +174,7 @@ gunicorn:
 
 settings.py
 
-```
+```python
 # 主机
 ALLOWED_HOSTS = []
 
@@ -178,6 +185,11 @@ AUTH_PASSWORD_VALIDATORS = [
 		"NAME": 'django.contrib.auth.password_validation.UserAttributeSimilariryValidator'
 	},
 ]
+
+# 自定义认证处理
+AuTHENTICATION_BACKENDS = (
+	'xxx.backend'
+)
 
 
 # 项目根目录
@@ -206,6 +218,13 @@ DATABASES = {
 
 # 调试模式
 DEBUG = True
+
+# 邮箱配置
+EMAIL_HOST = ""
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
+EMAIL_PORT = 
+EMAIL_USE_SSL = 
 
 # 已安装的app应用
 INSTALLED_APPS = [
@@ -313,10 +332,10 @@ urls.py
 
 视图函数映射（控制器）
 
-```
+```python
 urlpatterns = [
 	path("/xxx", xx.xx.xx)
-]
+] + static()
 ```
 
 
@@ -346,9 +365,23 @@ wsgi.py
 
 
 ### View
+```
+:
+	
+```
 
-视图处理函数
+#### 视图函数
 
+
+在`urls.py`中映射VIew视图函数
+```python
+from django.urls import path
+
+urlpatterns = [
+	path("xxx/<int:xxx>", views.xxx, name="xxx")
+]
+
+```
 
 
 #### request
@@ -371,8 +404,6 @@ wsgi.py
 
 ### Jinja2
 
-
-
 ```
 # 静态文件
 {% load static %}
@@ -389,7 +420,7 @@ wsgi.py
 {% endfor %}
 ## 字典 .keys|.values|.items
 
-# if
+# if 条件显示
 {% if  %}
 {% elif %}
 {% else %}
@@ -401,17 +432,43 @@ wsgi.py
 # 模板函数
 date
 
-
-
-
-
 # 继承
 {% block xxx %} {% endblock %}
 {% extends "xxx.html" %}
 
+
+# 用户认证
+{% user.is_authenticated %}
+
+
+
+内置变量/函数:
+	date:
+	safe: 字符串转html
+	static: 静态资源引用
+	url: 反向引用url
+	user:
+	
 ```
 
 
+django模板引擎
+
+
+#### 过滤器
+
+
+#### 自定义标签
+```python
+from django.template import Library
+
+register -Library()
+
+@register.simple_tag
+def xxx_tag():
+	return xxx
+
+```
 
 ### ORM
 
@@ -421,19 +478,20 @@ date
 
 数据库迁移
 
-自动生成表
+
 
 ```
-auth_group
-auth_group_permissions
-auth_permission
-auth_user
-auth_user_groups
-auth_user_user_permissions:
-django_admin_log
-django_content_type
-django_migrations
-django_session
+自动生成表:
+	auth_group
+	auth_group_permissions
+	auth_permission
+	auth_user
+	auth_user_groups
+	auth_user_user_permissions:
+	django_admin_log
+	django_content_type
+	django_migrations
+	django_session
 ```
 
 
@@ -448,6 +506,7 @@ Model实例:
 		all():
 		create():
 		filter():
+		get():
 			xxx__contains:
 			xxx__gt:
 			xxx__gte:
@@ -456,7 +515,7 @@ Model实例:
                 delete():
                 first():
                 update():
-        get():
+        
 	---
     delete():
 	save():
@@ -475,48 +534,66 @@ django.db.models:
 
 
 
-
+#### 一对一关联
+```python
+models. OneToOneField()
+```
 
 
 
 ### ModelForm
+```python
 
-input集合
+```
 
-字段校验
-
-
-
+input集合、字段校验
 
 
 
 
-### 中间件
+
+
+
+### Middleware
 
 装饰器实现
 
+
+Csrf中间件
 
 
 
 
 ### Admin
+```
+:
+	
+```
+
+后台管理界面
+
+
+
+
+### 辅助功能
+
+
+
+
+
+
+### 第三方插件
+
+
+
+
 
 
 
 ### DRF
 
 
-
-
-
-
-
-
-
-
-
-
-
+restful风格
 
 
 
@@ -534,59 +611,122 @@ django:
 			name:
 			verbose_name:
 	conf:
-		settings
+		settings: 配置
+		urls:
+			static:
+				static():
+					document_root:
 	contrib:
     	admin:
     		site:
     			site_header:
-    			register():
-    		register():
-    		ModelAdmin:
+    			register(): 管理界面注册模型
+    			unregister(): 取消注册模型
+    		
+    		ModelAdmin: 模型管理
+	    		Media: 静态资源
+		    		css:
+		    		js:
     			fields:
     			fieldset:
     			inlines:
-    			list_display:
+    			list_display: （）
     			list_filter:
     			search_fields:
+    		StackedInline: 管理界面显示模型
+	    		model: 
+    		register():
+    	auth:
+	    	admin:
+		    	UserAdmin:
+		    backends:
+			    ModelBackend:
+				    
+	    	models:
+		    	User:
+		    authenticate(): 认证 
+			    request:
+			    username:
+			    password:
+		    login(): 登录
+			    request:
+				user:
 	core:
 		exceptions:
 			ValidationError:
+		mail:
+			send_mail(): 发送邮件
+		paginator:
+			Paginator:
+				---
+				get_page():
+					---
+					has_next():
+					has_previous():
 		validators:
 			RegexValidator:
 	db: // orm框架
 		backends:
 			mysql:
 		models:
-			CASCADE:
+			CASCADE: 级联操作
             BigAutoField:
+            BooleanField:
             CharField:
+	            blank:
+	            choices: 二元组选项
+	            default:
+	            max_length:
+	        DateField:
+		        null:
             DateTimeField:
             DecimalField:
-            F:
+            F: 并发字段处理
             FileField:
                 upload_to:
             ForeignKey:
                 to:
                 to_field:
                 ondelete:
+            ImageField:
+	            upload_to:
             IntergerField:
+            ManyToManyField:
+            OneToOneField:
+	            on_delete:
+	            verbose_name:
+            PositiveIntegerField:
+	            choices:
             Q:
             SmallIntegerField:
                 choices:
 			---
             Model:
+	            Meta:
+		            verbose_name:
+		            verbose_name:plural:
+				__str__():
             	---
                 objects:
                     all():
                     create():
+                    dates(): 日期归档
                     exclude():
                     filter():
                		get():
+               		update():
+	               		xxx:
+		               		__contains:
+		               		__gt:
+		               		__gte:f
+		               		__lt:
+		               		
                         QuerySet:
                             delete():
                             exists():
                             first():
                             get_xxx_display():
+                            last():
                             order_by():
                             update():
                             values():
@@ -598,9 +738,12 @@ django:
         	savepoint():
         	savepoint_commit():
         	savepoint_rollback():
-	forms: // ModelForm
+	forms: // ModelForm表单、字段校验
+		utils:
+			ErrorDict:
 		CharField:
             label:
+            max_length:
             validators:
             widget:
         FileField:
@@ -618,12 +761,15 @@ django:
         IntegerField:
         ModelForm:
             Meta:
-                fields:
-                model:
+                fields: 显示的字段
+                model: 模型
                 widgets: {
                     xxx": forms.TextInput()
                 }
-            cleaned_data:
+            as_p:
+            as_table:
+            as_ul:
+            cleaned_data: 原始数据(字典)
             data:
             errors:
                 as_json():
@@ -631,30 +777,43 @@ django:
                 label:
                 errors:
             instance:
-            clean_xxx(): 字段钩子函数
+            clean_xxx(): 字段校验钩子函数
             delete():
-            is_valid():
-            save():
+            is_valid(): 字段校验
+            save(): 生成Model
+	            commit:
+	            ---
+	            save(): 
+	            set_xxx():
         PasswordInput:
         TextInput:
-            attrs:
-		utils:
-			ErrorDict:
+            attrs: html属性
+        ValidationError:
 	http:
 		HttpResponse:
 		JsonResponse:
+	middleware: 中间件
+		csrf:
+			CsrfViewMiddleware:
 	shotcuts:
 		HttpResponse
-        redirect
+        redirect(): 重定向
 		render():
+			request:
+			context:
 	template:
 		loader:
 			get_template():
 				---
 				render():
+			render_to_string():
+		Library:
+			---
+			simple_tag(): 模板标签装饰器
 	urls:
 		include(): 包含子路由
 		path():
+			name:
 		re_path():
 		url(): 路由映射处理
 	utils:
@@ -662,26 +821,28 @@ django:
 			MiddlewareMixin:
                 process_request():
                 process_response():
+        functional:
+	        cached_property: 缓存装饰器
         log:
 		safestring:
 			mark_safe():
 	views:
 		decorators:
             csrf:
-                csrf_exempt():
-
-
-
+                csrf_exempt(): 取消csrf（装饰器）
 
 ---
 request:
 	FILES:
 		name:
 		chunks():
+		get():
 	GET:
+		[]:
 		urlencode():
 	POST:
-	method:
+		[]:
+	method: 请求方法
 	path_info:
 	session:
 		clear():

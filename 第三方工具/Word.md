@@ -64,6 +64,12 @@
 
 ```
 域: {}
+	FileName:
+	FileSize:
+	IncludePicture:
+	IncludeText:
+	Index:
+	Info:
 	StyleRef:
 		
 ```
