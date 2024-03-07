@@ -162,7 +162,7 @@ TypeHint:
 		values():
 	int:
 	list:
-		List:
+	List:
 		list[xxx]:
 		append():
 		index():
@@ -243,6 +243,120 @@ TypeHint:
 
 
 ## 常用API
+```
+python:
+	builtin:
+		enumerate():
+		eval():
+		input():
+		int():
+		len():
+		list():
+		print():
+		repr(): 类似__str__
+		reversed():
+		set():
+		sorted():
+		str():
+		sum():
+	calendar:
+		Calendar:
+			firstweekday
+		HtmlCalendar:
+		TextCalendar:
+		calendar():
+		isleap():
+		month():
+		
+	functools:
+		filter():
+		reduce():
+		sorted():
+	json:
+		loads():
+	logging:
+	math:
+	re:
+		Match:
+			group():
+			groups():
+		Pattern:
+			findall():
+			fullmatch():
+			match():
+				pos: 指定开始位置
+			search():
+			split(): 匹配拆分字符串
+			sub(): 匹配替换
+		compile(): 
+			pattern:
+			flags:
+		findall():
+	shutil:
+	sys:
+		argv:
+		implementation:
+		meta_path:
+		modules:
+		orig_argv:
+		thread_info:
+		version_info:
+		addaudithook():
+	time:
+		struct_time:
+			tm_year:
+			tm_mon:
+			tm_mday:
+		ctime():
+		localtime():
+		sleep():
+		strftime(): 格式化字符串时间
+		strptime(): 格式化结构体时间
+		time():
+	tkinter:
+	typing:
+		bool:
+		bytes:
+			decode():
+		callable:
+		float:
+		int:
+		str:
+			encode():
+			format():
+		Any:
+		Dict:
+			items()
+		List:
+			count():
+			sort():
+		Optional:
+		Sequence:
+		Tuple:
+		Type:
+		TypeVar: 类型不确定
+		Union:
+	urllib:
+		parse:
+			quote():
+			urlencode():
+		request:
+			urlopen():
+			urlretrieve():
+		response:
+			getcode():
+			getheaders():
+			geturl():
+			read():
+			readline():
+			readlines():
+		Request:
+			data:
+			headers:
+			url:
+			
+```
+
 
 ### argparse
 
