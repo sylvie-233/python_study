@@ -1,8 +1,8 @@
-# Numpy基础
+# Numpy基础[]()
 
 >Author: Sylvie233
 >Date: 2022/11/27
->Point:  Python数据分析三剑客 数学建模基础 numpy、pandas、matplotlib：P2
+>Point:  Python数据分析三剑客 数学建模基础 numpy、pandas、matplotlib：P4
 
 
 ## 基础介绍
@@ -20,7 +20,7 @@
 安装：
 
 ```
-
+-i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 
@@ -82,12 +82,16 @@ numpy:
 		axis: 维度（0、1、2）
 	argmin():
 	argwhere():
+	arsort():
+	asarray():
+		dtype: 指定类型转换
 	clip(): 值范围裁剪
-	conxcatenate():
+	conxcatenate(): 连接
 		axis:
 	copy(): 复制拷贝
 	cos():
 	count_nonzero(): 非零计数
+	cov(): 相关系数矩阵
 	cumsum():
 	diag(): 对角线元素
 	dot(): 点乘（内积）
@@ -98,6 +102,7 @@ numpy:
 	log():
 	logspace():
 	matmul(): 矩阵乘法（@）
+	max():
 	mean(): 平均值
 		axis
 	median(): 中位数
@@ -106,13 +111,14 @@ numpy:
 	ptp(): 极值差
 	round(): 
 	sin():
+	sort():
 	sqrt():
 	squeeze(): 去除冗余的维度
 	std(): 标准差
 	sum(): 和
 	swapaxes(): 交换维度
 	vstack(): 行添加
-	where(): 条件赋值	
+	where(): 条件赋值、非零元素索引
 	
 	----------------------------
 	loadtxt(): 读取文件
@@ -137,6 +143,7 @@ ndarray:
     argmax():
     argmin():
 	astype(): 类型转换
+	copy():
 	flatten(): 展开
 	reshape(): 形状改变
 		-1: 待定
@@ -197,8 +204,9 @@ pandas: pd
     	start:
     	end:
     	freq:
-    	periods:
+    	periods: 时间长度
     	return: DatetimeINdex
+    Categorical(): 
     DataFrame(): 数据框
     	data: 
     	index: 行索引
@@ -211,6 +219,7 @@ pandas: pd
 		freq:
     Series(): 序列
     	index: 索引指定
+    Timestamp(): 时间戳
     --------------------------------
 	dot(): 矩阵内积
 		a:
@@ -229,6 +238,7 @@ pandas: pd
 	--------------------------------
 	read_csv():
 		names: []（列名）
+	read_excel():
 	read_sql(): sql执行数据
 	 
 	 
@@ -256,6 +266,7 @@ string: 字符串
 Series: （带标签的一维数组）
 	dtype:
 	index: 索引Index
+	name: 名称
 	values: 值
 	str: 字符串
 	[]: 切片/索引index
@@ -263,8 +274,11 @@ Series: （带标签的一维数组）
 	argmax():
 	argmin():
 	astype():
+	fillna():
+		inplace:
 	groupby():
 		by: 列值可按其他列中的值进行分组
+	isnull():
 	max():
 	mean():
 	median():
@@ -284,7 +298,7 @@ DataFrame: 数据框（二维，多维Series（列），类似数据库的表）
 	values: np.array类型（值）
 	ndim: 数据维度
 	[]: 切片/索引（列索引为Series，df[行索引]["列索引"]）
-	
+	append():
 	count(): 计数
 	describe(): 快速综合统计结果（计算、平均值、标准差、中位数）
 	drop(): 删除列
@@ -309,11 +323,12 @@ DataFrame: 数据框（二维，多维Series（列），类似数据库的表）
 		sum():
 		var():
 	head(n): 查看前n行
-	iloc[]: 根据位置索引数据
+	iloc[]: 根据位置索引数据（行）
 	info(): 相关信息（行数、列数、）
 	isin(): in过滤
+	isnull():
 	join(): 默认按行索引相同合并
-	loc[]: 根据标签索引数据 
+	loc[]: 根据标签索引数据 （行）
 	mean(): 平均值
 	merge(): 按字段连接（默认inner）
 		df:
@@ -341,8 +356,8 @@ DataFrame: 数据框（二维，多维Series（列），类似数据库的表）
 	sum(): 求和
 		axis: 0所有行（剩列）
 	swaplevel(): 交换索引层级
-	tail(): 
-	
+	tail(): 末尾数据
+	to_excel():
 
 ```
 
