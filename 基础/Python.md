@@ -245,6 +245,16 @@ TypeHint:
 ## 常用API
 ```
 python:
+	argparse:
+	asyncio:
+		Event:
+			set():
+			wait():
+		create_task():
+		gather():
+		get_event_loop():
+		run():
+		sleep():
 	builtin:
 		enumerate():
 		eval():
@@ -267,15 +277,24 @@ python:
 		calendar():
 		isleap():
 		month():
-		
+	concurrent:
+		fetures:
+			ThreadPoolExecutor: 
+				submit():
 	functools:
 		filter():
 		reduce():
 		sorted():
+	http:
+	io:
 	json:
 		loads():
 	logging:
 	math:
+	multiprocessing:
+		Pool:
+			map():
+	os:
 	re:
 		Match:
 			group():
@@ -293,6 +312,7 @@ python:
 			flags:
 		findall():
 	shutil:
+	socket:
 	sys:
 		argv:
 		implementation:
@@ -302,6 +322,8 @@ python:
 		thread_info:
 		version_info:
 		addaudithook():
+		getsizeof():
+	threading:
 	time:
 		struct_time:
 			tm_year:
@@ -321,6 +343,7 @@ python:
 		callable:
 		float:
 		int:
+		range:
 		str:
 			encode():
 			format():

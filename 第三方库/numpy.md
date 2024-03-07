@@ -1,12 +1,9 @@
-# Numpy基础[]()
+# Numpy
 
 >Author: Sylvie233
 >Date: 2022/11/27
-<<<<<<< HEAD
->Point:  Python数据分析三剑客 数学建模基础 numpy、pandas、matplotlib：P4
-=======
->Point:  Python数据分析三剑客 数学建模基础 numpy、pandas、matplotlib：P5
->>>>>>> 860c883ef35596787f54da55903306c5a7d94fba
+>Point: 
+	
 
 
 ## 基础介绍
@@ -91,13 +88,9 @@ numpy:
 		axis: 维度（0、1、2）
 	argmin():
 	argwhere():
-<<<<<<< HEAD
 	arsort():
 	asarray():
-		dtype: 指定类型转换
-=======
 	astype():
->>>>>>> 860c883ef35596787f54da55903306c5a7d94fba
 	clip(): 值范围裁剪
 	conxcatenate(): 连接
 		axis:
@@ -300,15 +293,8 @@ Series: （带标签的一维数组）
 	
 	argmax():
 	argmin():
-<<<<<<< HEAD
 	astype():
 	fillna():
-		inplace:
-=======
-	astype(): 格式转换
-	corr(): 相关系数
-	cov(): 协方差
->>>>>>> 860c883ef35596787f54da55903306c5a7d94fba
 	groupby():
 		by: 列值可按其他列中的值进行分组
 	isnull():
@@ -367,11 +353,7 @@ DataFrame: 数据框（二维，多维Series（列），类似数据库的表）
 	isin(): in过滤
 	isnull():
 	join(): 默认按行索引相同合并
-<<<<<<< HEAD
 	loc[]: 根据标签索引数据 （行）
-=======
-	loc[]: 索引数据(可修改) 
->>>>>>> 860c883ef35596787f54da55903306c5a7d94fba
 	mean(): 平均值
 	merge(): 按字段连接（默认inner）
 		df:
@@ -400,14 +382,8 @@ DataFrame: 数据框（二维，多维Series（列），类似数据库的表）
 	sum(): 求和
 		axis: 0所有行（剩列）
 	swaplevel(): 交换索引层级
-<<<<<<< HEAD
 	tail(): 末尾数据
-	to_excel():
-=======
-	tail(): 
 	to_excel(): 保存到excel表中
->>>>>>> 860c883ef35596787f54da55903306c5a7d94fba
-
 ```
 
 
