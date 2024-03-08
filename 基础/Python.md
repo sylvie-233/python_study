@@ -281,12 +281,24 @@ python:
 		fetures:
 			ThreadPoolExecutor: 
 				submit():
+	datetime:
+		date():
+		time():
 	functools:
 		filter():
 		reduce():
 		sorted():
 	http:
 	io:
+		TextIOWrapper:
+			buffer():
+			close():
+			closed():
+			readline():
+			readlines():
+			seek():
+			write():
+			writelines():
 	json:
 		loads():
 	logging:
@@ -294,7 +306,38 @@ python:
 	multiprocessing:
 		Pool:
 			map():
+		Process:
+			
 	os:
+		path:
+			abspath():
+			basename():
+			dirname():
+			exists():
+			getatime():
+			getmtime():
+			getsize():
+			isdir():
+			isfile():
+			join():
+			realpath():
+		stat_result:
+			st_atime:
+			st_ctime:
+			st_dev:
+			st_mode:
+			st_mtime:
+			st_size:
+		remove():
+		rename():
+	pathlib:
+		Path:
+	pickle:
+		Pickler:
+		dump():
+		dumps():
+		load():
+		loads():
 	re:
 		Match:
 			group():
@@ -312,7 +355,36 @@ python:
 			flags:
 		findall():
 	shutil:
+		copy():
+		copyfile():
 	socket:
+		error:
+		socket:
+			accept():
+			bind():
+			close():
+			connect():
+			fineno():
+			listen():
+			recv():
+			recvfrom():
+			send():
+			sendto():
+			setblocking():
+			setsockopt():
+	sqlite3:
+		Connection:
+			close():
+			commit():
+		Cursor:
+			rowcount:
+			close():
+			execute():
+			executemany():
+			fetchall():
+			fetchone():
+		Error:
+		connect():
 	sys:
 		argv:
 		implementation:
@@ -324,6 +396,10 @@ python:
 		addaudithook():
 		getsizeof():
 	threading:
+		Lock:
+			acquire():
+			release():
+		Thread:
 	time:
 		struct_time:
 			tm_year:
@@ -350,6 +426,8 @@ python:
 		Any:
 		Dict:
 			items()
+		Exception:
+			
 		List:
 			count():
 			sort():
@@ -360,9 +438,13 @@ python:
 		TypeVar: 类型不确定
 		Union:
 	urllib:
+		error:
+			
 		parse:
 			quote():
 			urlencode():
+		rebotparser:
+			
 		request:
 			urlopen():
 			urlretrieve():

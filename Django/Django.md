@@ -5,7 +5,7 @@
 > Date: 23/1/22
 >
 > Point:  
->	Python-Django手把手从零开发个人博客：P26
+>	
 > ​	
 
 
