@@ -9,13 +9,20 @@
 
 ## 基础介绍
 
-直接使用table
+一、直接使用table（sql语句）
 `engine`->`metadata`->`table`
 `table`->`connection`->`sql语句`->`result
 
-或者使用映射类进行查询
+二、或者使用映射类进行查询
 `engine`->`BaseModel`->`自定义model`
 `session`->`model`
+
+三、同时使用sql语句何model映射类
+`session`->`sql语句`->`model`
+
+
+
+
 
 连表查询relationship中的backref用于给别人添加一个自身类型的片段，就不用改变对方的模型结构了，backref只用写一次就行了
 同理，多对多中的中间表secondary也只需要在其中一个类上定义就行
@@ -83,6 +90,7 @@ sqlalchemy:
 		Session: 类似Connection作用
 			add():
 			add_all():
+			begin():
 			commit():
 			delete():
 			filter():
@@ -93,6 +101,7 @@ sqlalchemy:
 		dml: 定义语句
 			Delete:
 			Insert:
+				values():
 			Join:
 			Select:
 				select_from():
@@ -123,12 +132,28 @@ sqlalchemy:
 		join():
 		select():
 		update():
+	bindparam():
 	create_engine():
+	delete():
+	insert():
+	select():
 	text():
+	update():
 ```
 
 
 
+### 模型
 
+
+```python
+class Custom(Base):
+	__tablename__ = "表名"
+	id: Mapped[int] = mapped_column(
+		primaty_key=True,
+		unique=True,
+		nullable=False
+	)
+```
 
 
