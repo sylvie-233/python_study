@@ -277,6 +277,8 @@ python:
 		calendar():
 		isleap():
 		month():
+	cgi:
+	cgitb:
 	concurrent:
 		fetures:
 			ThreadPoolExecutor: 
@@ -309,6 +311,7 @@ python:
 		Process:
 			
 	os:
+		environ:
 		path:
 			abspath():
 			basename():
@@ -391,6 +394,10 @@ python:
 		meta_path:
 		modules:
 		orig_argv:
+		stderr:
+		stdin:
+		stdout:
+			write():
 		thread_info:
 		version_info:
 		addaudithook():
@@ -459,6 +466,12 @@ python:
 			data:
 			headers:
 			url:
+	wsgiref:
+		simple_server:
+			WSGIServer:
+				serve_forever():
+			make_server():
+			
 			
 ```
 

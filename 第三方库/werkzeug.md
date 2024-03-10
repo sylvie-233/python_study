@@ -4,6 +4,8 @@
 >
 >Date: 24/03/09
 
+
+
 Python WSGI（Web Server Gateway Interface）工具库
 
 
@@ -13,12 +15,40 @@ Python WSGI（Web Server Gateway Interface）工具库
 
 ![[Pasted image 20240309193118.png]]
 
+```python
+# WSGI入门函数
+def application(environ, start_response):  
+	status = '200 OK'  
+	output = 'World!'  
+	response_headers = [('Content-type', 'text/plain'),  
+                      ('Content-Length', str(12)]  
+	write = start_response(status, response_headers)  
+	write('Hello ')  
+	return [output]
+```
+
+
+### ASGI
+
+#### uvicorn
+```
+uvicorn:
+	
+```
+
+
+
+
+
+
 
 
 
 ## 核心内容
 
 ```
+uvicorn:
+	run():
 werkzeug:
 	contrib:
 		session:
