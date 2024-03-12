@@ -15,6 +15,12 @@
 一个项目中可以有多个app应用
 
 
+执行流程：`ManagementUtility.execute()`->`django.setup()`->`apps.poplate(settings.INSTALLED_APPS)`->`ManagementUtility.fetch_command()`->`BaseCommand.run_from_argv()`->`Command.execute()`->`Command.handle()`
+
+
+
+
+
 
 
 #### 目录结构
@@ -607,15 +613,32 @@ restful风格
 ```
 django:
 	apps:
+		apps: Apps实例
+		Apps:
+			all_models: 已注册的所有模型
+			app_configs: dict（label对应app的配置）
+			apps_ready: boolean（app已经安装）
+			loading: boolean（app加载状态）
+			models_ready: boolean（model导入成功）
+			populate(): 加载app配置和model模型（线程安全）
 		AppConfig:
-			name:
+			label:
+			name: 应用名称
 			verbose_name:
+			create():
 	conf:
+		global_settings: django默认全局配置
+			
 		settings: 配置
 		urls:
 			static:
 				static():
 					document_root:
+		LazySettings:
+		Settings:
+			mod:
+			SETTINGS_MODULE: 配置模块
+			
 	contrib:
     	admin:
     		site:
@@ -652,10 +675,30 @@ django:
 			    request:
 				user:
 	core:
+		base:
+			BaseCommand:
+				run_from_argv():
+			CommandParser:
 		exceptions:
+			ImproperlyConfigured:
 			ValidationError:
+		handlers:
+			wsgi:
+				WSGIHandler: (可调用对象(environ, start_response))
+					
+				WSGIRequest:
+				
 		mail:
 			send_mail(): 发送邮件
+		management:
+			base:
+				BaseCommand: 命令工具基类
+				CommandError:
+				COmmandParser:
+				handle_default_options:
+			color:
+				color_style:
+			commands:
 		paginator:
 			Paginator:
 				---
@@ -663,11 +706,21 @@ django:
 					---
 					has_next():
 					has_previous():
+		servers:
+			basehttp:
+				get_internal_wsgi_application():
+				run(): 服务运行的真正函数
+		signals:
+			request_finished():
 		validators:
 			RegexValidator:
 	db: // orm框架
 		backends:
 			mysql:
+		connections:
+		migrations:
+			executor:
+				MigrationExecutor:
 		models:
 			CASCADE: 级联操作
             BigAutoField:
@@ -738,6 +791,8 @@ django:
         	savepoint():
         	savepoint_commit():
         	savepoint_rollback():
+	dispatch:
+		Signal:
 	forms: // ModelForm表单、字段校验
 		utils:
 			ErrorDict:
@@ -815,17 +870,28 @@ django:
 		path():
 			name:
 		re_path():
+		set_script_prefix():
 		url(): 路由映射处理
 	utils:
+		autoreload: 自动重加载
 		deprecation:
 			MiddlewareMixin:
                 process_request():
                 process_response():
+            RemovedInDjango60Warning:
         functional:
 	        cached_property: 缓存装饰器
+	        empty:
+		    LazyObject:
+	        SimpleLazyObject:
         log:
+	        configure_logging():
+        regex_helper:
+	        
 		safestring:
 			mark_safe():
+		version:
+			get_version():
 	views:
 		decorators:
             csrf:

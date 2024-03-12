@@ -25,7 +25,7 @@ pip:
 	config:
 	freeze:
 	install:
-		-i:
+		-i: 指定镜像源
 		-r:
 		--upgrade:
 	list:	
@@ -256,6 +256,7 @@ python:
 		run():
 		sleep():
 	builtin:
+		dir():
 		enumerate():
 		eval():
 		input():
@@ -269,6 +270,7 @@ python:
 		sorted():
 		str():
 		sum():
+		vars(): 对象转字典
 	calendar:
 		Calendar:
 			firstweekday
@@ -279,18 +281,34 @@ python:
 		month():
 	cgi:
 	cgitb:
+	collections:
+		defaultdict:
+		Count: dict（value为key的个数）
 	concurrent:
 		fetures:
 			ThreadPoolExecutor: 
 				submit():
+	
 	datetime:
+		date:
+			strftime(): 格式化日期字符串
+		datetime:
+			fromtimestamp():
 		date():
 		time():
+	difflib:
+		get_close_matches():
 	functools:
 		filter():
+		lru_cache(): 缓存函数
 		reduce():
 		sorted():
 	http:
+		server:
+			HTTPServer:
+				
+	importlib:
+		import_module(): 动态导入模块（返回模块对象）
 	io:
 		TextIOWrapper:
 			buffer():
@@ -311,7 +329,9 @@ python:
 		Process:
 			
 	os:
-		environ:
+		environ: 环境变量
+		implementation:
+			name:
 		path:
 			abspath():
 			basename():
@@ -331,6 +351,7 @@ python:
 			st_mode:
 			st_mtime:
 			st_size:
+		version_info: 版本信息
 		remove():
 		rename():
 	pathlib:
@@ -341,6 +362,8 @@ python:
 		dumps():
 		load():
 		loads():
+	pkgutil:
+		
 	re:
 		Match:
 			group():
@@ -375,6 +398,18 @@ python:
 			sendto():
 			setblocking():
 			setsockopt():
+	socketserver:
+		BaseServer:
+			serve_forever():
+		TCPServer:
+			server_address:
+			socket:
+			close_request():
+			fileno():
+			get_request():
+			server_activate():
+			server_bind():
+			server_close():
 	sqlite3:
 		Connection:
 			close():
@@ -388,12 +423,15 @@ python:
 			fetchone():
 		Error:
 		connect():
+	subprocess:
+		run(): 运行子进程
 	sys:
 		argv:
 		implementation:
 		meta_path:
-		modules:
+		modules: 已经存在的模块
 		orig_argv:
+		path:
 		stderr:
 		stdin:
 		stdout:
@@ -401,12 +439,18 @@ python:
 		thread_info:
 		version_info:
 		addaudithook():
+		exc_info():
 		getsizeof():
 	threading:
+		Event：
+			set():
 		Lock:
 			acquire():
 			release():
+		RLock: 可重入锁
 		Thread:
+			start(): 启动线程
+		current_thread():
 	time:
 		struct_time:
 			tm_year:
@@ -466,10 +510,17 @@ python:
 			data:
 			headers:
 			url:
-	wsgiref:
+	warnings:
+		warn():
+	wsgiref: wsgi服务的简单实现
 		simple_server:
 			WSGIServer:
+				application:
+				get_app():
 				serve_forever():
+				server_bind():
+				set_app():
+				setup_environ():
 			make_server():
 			
 			
