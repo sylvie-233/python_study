@@ -39,6 +39,15 @@ fastapi:
 		query_params:
 	Response:
 
+pydantic:
+	
+
 uvicorn:
 	run():
 ```
+
+
+### 参数校验
+
+
+`pydantic`库

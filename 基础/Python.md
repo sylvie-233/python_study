@@ -246,13 +246,27 @@ TypeHint:
 ```
 python:
 	argparse:
+		ArgumentParser:
+			description:
+			add_argument():
+				choices:
+				default:
+				type:
+			parse_args(): 解析参数
+		Namespace: 解析出来的参数集合对象
 	asyncio:
+		windows_events:
+			ProactorEventLoop:
+				run_until_complete():
 		Event:
 			set():
 			wait():
+		Semaphore: 信号量
+			acquire():
+			release():
 		create_task():
 		gather():
-		get_event_loop():
+		get_event_loop(): 获取事件循环
 		run():
 		sleep():
 	builtin:
@@ -263,6 +277,7 @@ python:
 		int():
 		len():
 		list():
+		next(): 调用迭代器
 		print():
 		repr(): 类似__str__
 		reversed():
@@ -286,9 +301,15 @@ python:
 		Count: dict（value为key的个数）
 	concurrent:
 		fetures:
-			ThreadPoolExecutor: 
+			Future:
+				result():
+			ProcessPoolExecuter:
+				map():
 				submit():
-	
+			ThreadPoolExecutor: 
+				map():
+				submit():
+			as_completed():
 	datetime:
 		date:
 			strftime(): 格式化日期字符串
@@ -303,10 +324,10 @@ python:
 		lru_cache(): 缓存函数
 		reduce():
 		sorted():
+		wraps(): 保留装饰函数信息
 	http:
 		server:
-			HTTPServer:
-				
+			HTTPServer:			
 	importlib:
 		import_module(): 动态导入模块（返回模块对象）
 	io:
@@ -324,10 +345,11 @@ python:
 	logging:
 	math:
 	multiprocessing:
+		Lock:
 		Pool:
 			map():
 		Process:
-			
+		Queue:	
 	os:
 		environ: 环境变量
 		implementation:
@@ -363,7 +385,14 @@ python:
 		load():
 		loads():
 	pkgutil:
-		
+	queue:
+		Queue: 同步队列
+			empty():
+			full():  
+			get():
+			put():
+			qsize():
+				
 	re:
 		Match:
 			group():
@@ -445,10 +474,14 @@ python:
 		Event：
 			set():
 		Lock:
-			acquire():
-			release():
+			acquire(): 获取锁
+			release(): 释放锁
 		RLock: 可重入锁
 		Thread:
+			args:
+			name:
+			target:
+			join():
 			start(): 启动线程
 		current_thread():
 	time:
@@ -458,6 +491,7 @@ python:
 			tm_mday:
 		ctime():
 		localtime():
+		perf_counter():
 		sleep():
 		strftime(): 格式化字符串时间
 		strptime(): 格式化结构体时间
