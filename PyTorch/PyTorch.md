@@ -32,7 +32,7 @@ torch:
 		Module:
 		ReLU:
 			inplace:
-	optim:
+	optim: 优化器
 		Adam:
 			step():
 		SGD:
@@ -53,7 +53,9 @@ torch:
 		
 	argmax():
 	load():
+	manual_seed(): 随机种子
 	save(): 模型保存
+	set_printoptions():
 	
 
 torchvision:
@@ -101,6 +103,5 @@ pandas:
 
 matplotlib:
 	pyplot:
-		plt:
-			imshow():
+		imshow():
 ```
