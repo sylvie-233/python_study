@@ -231,6 +231,17 @@ function hello{
 
 
 
+### 对象
+
+`PSCustomObject`
+```powershell
+$obj = New-Object psobject
+
+
+
+```
+
+
 ### 模块
 
 ```
