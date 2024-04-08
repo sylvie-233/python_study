@@ -13,17 +13,18 @@
 ```
 PowerShell:
 	Add-:
-
+		Content: 追加内容
 	Clear-:
 		Host:
 	ConvertTo-:
 	Copy-:
+		Item: 复制对象
 	Disable-:
 	Enable-:
 	Export-:
 		ModuleMember: 导出模块成员
-			-Function:
-			-Variable:
+			-Function: 导出函数
+			-Variable: 导出变量
 	Find-:
 	ForEach-:
 		Object:
@@ -45,12 +46,15 @@ PowerShell:
 		Variable: 获取变量
 	Import-:
 		Module: 导入模块
+			-Name:
 	Install-:
 		Module:
 	Invoke-:
 	Measure-:
 		Command:
 			-Expression:
+	Move-:
+		Item: 移动对象
 	New-:
 		Item:
 			-Path: 指定路径
@@ -68,11 +72,20 @@ PowerShell:
 			-Root:
 	Register-:
 	Remove-:
-		
+		Item: 删除对象
+		Module: 移除模块
+	Rename-:
+		Item: 重命名
+			-NewName:rrr
+			-Path:
+			
 	Reset-:
 	Save-:
 		Module:
 	Set-:
+		Content: 设置内容
+			-Path:
+			-Value:
 		Location: 设置当前路径
 		Printer:
 		StrictMode:
@@ -88,6 +101,20 @@ PowerShell:
 		Host: 控制台输出
 		Object:
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #### 常用变量
