@@ -30,8 +30,8 @@ PowerShell:
 	Get-:
 		Alias: 命令别名
 		ChildItem:
-			-Path:
-			-Recurse:
+			-Path: 指定路径
+			-Recurse: 递归
 		Content: 获取内容
 		Date: 获取日期
 		ExecutionPolicy：获取ps执行策略
@@ -39,7 +39,8 @@ PowerShell:
 		Help: 获取命令信息
 		Process: 获取进程信息
 			-Name:
-			
+		PSDriver: 
+		PSProvider: 内容提供者
 		Service: 服务
 		Variable: 获取变量
 	Import-:
@@ -52,13 +53,19 @@ PowerShell:
 			-Expression:
 	New-:
 		Item:
-			-Path:
-			-Type:
+			-Path: 指定路径
+			-ItemType:
+				Directory: 新建目录
+				File: 新建文件
 		ModuleManifest: 生成模块清单文件
 			-Author: 
 			-ModuleVersion:
 		Object:
 			-TypeName:
+		PsDriver:
+			-Name:
+			-PsProvider:
+			-Root:
 	Register-:
 	Remove-:
 		
@@ -86,12 +93,19 @@ PowerShell:
 #### 常用变量
 
 ```
-$Variable：
-	false:
-	null:
-	psVersionTable:
-		psVersion:
-	true:
+Host:
+	UI:
+		RawUI:
+			BufferSize:
+			WindowSize:
+
+Profile:
+	CurrentUserAllHosts:
+
+PsISE: 
+	Options: ise环境配置
+		FontName:
+
 
 System:
 	Array:
@@ -124,6 +138,14 @@ System:
 	String:
 		Tochararray():
 	ValueType:
+
+Variable：
+	false:
+	null:
+	psVersionTable:
+		psVersion:
+	true:
+
 ```
 
 
@@ -195,3 +217,19 @@ function hello{
 - 清单文件：`.psd1`
 - 模块文件：`.psm1`
 
+
+
+
+### Provider
+数据存储路径和访问组件的一个标准的接口
+- 文件系统
+- 注册表‘
+- 函数
+- 变量
+- 别名
+- 环境变量
+- 证书
+- WSwan
+
+
+#### Driver
